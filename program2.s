@@ -64,25 +64,13 @@ greater:
     movq $1, %rbx       # $1 is stdout    
     movq $newLine, %rcx # output message    
     movq $1, %rdx       # length of the message    
-    int  $0x80          # system interrupt to kernel   
-# Output x (testing purposes)
-#    movq $4, %rax       # sys_write    
-#    movq $1, %rbx       # $1 is stdout    
-#    movq $x, %rcx       # output x
-#    movq $0x1, %rdx     # length of the message    
-#    int  $0x80          # system interrupt to kernel   
+    int  $0x80          # system interrupt to kernel     
 # Output message
     movq $4, %rax       # sys_write    
     movq $1, %rbx       # $1 is stdout    
     movq $outMsg1, %rcx  # output message    
     movq $5, %rdx      # length of the message    
     int  $0x80          # system interrupt to kernel 
-# Output y (testing purposes)
-#    movq $4, %rax       # sys_write    
-#    movq $1, %rbx       # $1 is stdout    
-#    movq $y, %rcx       # output y
-#    movq $0x1, %rdx     # length of the message    
-#    int  $0x80          # system interrupt to kernel
     jmp end
 
 lesser:
@@ -92,24 +80,12 @@ lesser:
     movq $newLine, %rcx # output message    
     movq $1, %rdx       # length of the message    
     int  $0x80          # system interrupt to kernel  
-# Output x (testing purposes)
-#    movq $4, %rax       # sys_write    
-#    movq $1, %rbx       # $1 is stdout    
-#    movq $x, %rcx       # output x
-#    movq $0x1, %rdx     # length of the message    
-#    int  $0x80          # system interrupt to kernel  
 # Output message
     movq $4, %rax       # sys_write    
     movq $1, %rbx       # $1 is stdout    
     movq $outMsg2, %rcx # output message    
     movq $6, %rdx       # length of the message    
     int  $0x80          # system interrupt to kernel
-# Output y (testing purposes)
-#    movq $4, %rax       # sys_write    
-#    movq $1, %rbx       # $1 is stdout    
-#    movq $y, %rcx       # output y
-#    movq $0x1, %rdx     # length of the message    
-#    int  $0x80          # system interrupt to kernel
     jmp end
 
 equal:
@@ -119,24 +95,12 @@ equal:
     movq $newLine, %rcx # output message    
     movq $1, %rdx       # length of the message    
     int  $0x80          # system interrupt to kernel  
-# Output x (testing purposes)
-#    movq $4, %rax       # sys_write    
-#    movq $1, %rbx       # $1 is stdout    
-#    movq $x, %rcx       # output x
-#    movq $0x1, %rdx     # length of the message    
-#    int  $0x80          # system interrupt to kernel  
 # Output message
     movq $4, %rax       # sys_write    
     movq $1, %rbx       # $1 is stdout    
     movq $outMsg2, %rcx # output message    
     movq $6, %rdx       # length of the message    
     int  $0x80          # system interrupt to kernel
-# Output y (testing purposes)
-#    movq $4, %rax       # sys_write    
-#    movq $1, %rbx       # $1 is stdout    
-#    movq $y, %rcx       # output y
-#    movq $0x1, %rdx     # length of the message    
-#    int  $0x80          # system interrupt to kernel
 
 end:
 
